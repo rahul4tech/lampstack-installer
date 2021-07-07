@@ -46,7 +46,7 @@ echo '------------------------'
 echo Please Wait….
 
 
-yum install httpd php mysql mysql-server phpmyadmin php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-dom php-simplexml  >> /tmp/lograh.log
+yum install -y httpd php mysql mysql-server phpmyadmin php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-dom php-simplexml >> /tmp/lograh.log
 
 service mysqld restart > /tmp/lograh.log
 
