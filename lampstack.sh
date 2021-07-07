@@ -15,7 +15,7 @@ passwd
 
 clear
 
-echo 'sh lampstack.sh 2' >> .bash_profile
+echo 'sh lampstack.sh 2' >> ~/.bash_profile
 
 echo Preparing Post Install, Server Will Reboot In Few Seconds And Continue Installation After Next Login
 
