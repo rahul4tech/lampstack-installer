@@ -5,6 +5,8 @@ step=$1
 if [ "$step" == "" ]
 then
 
+echo 'LC_CTYPE="en_US.UTF-8"' >> /etc/sysconfig/i18n
+
 clear
 echo change root password
 sleep 1
@@ -13,7 +15,7 @@ passwd
 
 clear
 
-echo 'sh lampstack.sh 2' >> ~/.bash_profile
+echo 'sh lampstack-installer/lampstack.sh 2' >> ~/.bash_profile
 
 echo Preparing Post Install, Server Will Reboot In Few Seconds And Continue Installation After Next Login
 
@@ -21,7 +23,7 @@ echo Preparing Post Install, Server Will Reboot In Few Seconds And Continue Inst
 yum install -y wget epel-release telnet nano >> /tmp/lograh.log
 
 
-yum install yum-utils -y >> /etc/sysconfig/i18n
+yum install yum-utils -y >> /tmp/lograh.log
 
 
 echo "Enabling PHP 5.*"
@@ -34,7 +36,7 @@ fi
 if [ "$step" == "2" ]
 then
 
-sed -i '/[[:space:]]\+lampstack.sh/d' ~/.bash_profile
+sed -i '/[[:space:]]\+lampstack-installer/d' ~/.bash_profile
 
 clear
 echo "Running Post Install Module…"
