@@ -5,8 +5,6 @@ step=$1
 if [ "$step" == "" ]
 then
 
-#echo 'LC_CTYPE="en_US.UTF-8"' >> /etc/sysconfig/i18n
-
 clear
 echo change root password
 sleep 1
@@ -20,17 +18,11 @@ echo 'sh lampstack.sh 2' >> ~/.bash_profile
 echo Preparing Post Install, Server Will Reboot In Few Seconds And Continue Installation After Next Login
 
 
-yum install -y wget epel-release telnet >> /tmp/lograh.log
+yum install -y wget epel-release telnet nano >> /tmp/lograh.log
 
-# wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-
-# wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-
-# yum localinstall remi-release-6.rpm
 
 yum install yum-utils -y >> /etc/sysconfig/i18n
 
-# yum-config-manager --enable remi-php54
 
 echo "Enabling PHP 5.*"
 
