@@ -5,7 +5,7 @@ step=$1
 if [ "$step" == "" ]
 then
 
-echo 'LC_CTYPE="en_US.UTF-8"' >> /etc/sysconfig/i18n
+#echo 'LC_CTYPE="en_US.UTF-8"' >> /etc/sysconfig/i18n
 
 clear
 echo change root password
@@ -42,7 +42,7 @@ fi
 if [ "$step" == "2" ]
 then
 
-sed -i '/[[:space:]]\+lampstack.sh/d' .bash_profile
+sed -i '/[[:space:]]\+lampstack.sh/d' ~/.bash_profile
 
 clear
 echo "Running Post Install Module…"
